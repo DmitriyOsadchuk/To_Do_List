@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+.header,.footer {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.section {
+    height: 100%;
+    padding: 24px 0;
+    background-color: #f8f9fa;
+}
+
+.title_content {
+    font-size: 18px;
+    color: #9c9c9c;
+}
+
+.border-form {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+}
+
+.list .list-task {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    cursor: pointer;
+    position: relative;
+    padding: 12px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.list .list-task p {
+        margin: 0 10px 0 0;
+    }
+.list .list-task span {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%)
+    }
+
+.list .list-task:hover {
+    background: #ddd;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

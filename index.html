@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+</head>
+<body>
+<header class="header bg-white">
+    <div class="container">
+        <nav class="navbar navbar-light bg-white">
+            <span class="navbar-brand mb-0 h1">Welcome</span>
+        </nav>
+    </div>
+</header>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h5 class="title_content">Create User</h5>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+
+                <form action="#">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputSurname" placeholder="Surname">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputSpecialization" placeholder="Specialization">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputJob" placeholder="Job title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select id="inputState" class="form-control" onchange="getType()">
+                            <option>Select type...</option>
+                            <option value="user">User</option>
+                            <option value="student">Student</option>
+                            <option value="developer">Developer</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item d-none" id="tabSimpleTask">
+                        <a href="#simpleTask" class="nav-link" role="tab" data-toggle="tab">Simple task</a>
+                    </li>
+
+                    <li class="nav-item d-none" id="tabHomeTask">
+                        <a href="#homeTask" class="nav-link" role="tab" data-toggle="tab">Home task</a>
+                    </li>
+                    <li class="nav-item d-none" id="tabProjectTask">
+                        <a href="#projectTask" class="nav-link" role="tab" data-toggle="tab">Project task</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="simpleTask">
+                        <div class="border-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-7">
+                                        <input type="text" class="form-control" id="titleSimpleTask" placeholder="Title">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <input type="text" class="form-control" id="statusSimpleTask" placeholder="Status">
+                                    </div>
+                                </div>
+                                <button id="addSimpleTask" class="btn btn-primary" type="button" onclick="simpleTask()">Add task</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="homeTask">
+                        <div class="border-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-7">
+                                        <input type="text" class="form-control" id="titleHomeTask" placeholder="Title">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <input type="text" class="form-control" id="statusHomeTask" placeholder="Status">
+                                    </div>
+                                    <div class="form-group col">
+                                        <textarea class="form-control " id="descriptionHomeTask" placeholder="Description here..."></textarea>
+                                    </div>
+                                </div>
+                                <button id="addHomeTask" class="btn btn-primary" type="button" onclick="homeTask()">Add task</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="projectTask">
+                        <div class="border-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-7">
+                                        <input type="text" class="form-control" id="titleProjectTask" placeholder="Title">
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <input type="text" class="form-control" id="statusProjectTask" placeholder="Status">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <textarea class="form-control " id="descriptionProjectTask" placeholder="Description here..."></textarea>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="date" id="deadlineProjectTask" class="form-control">
+                                    </div>
+                                </div>
+                                <button id="addProjectTask" class="btn btn-primary" type="button" onclick="ProjectTask()">Add task</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul id="listView" class="list"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer bg-white">
+    <div class="container">
+        <nav class="navbar navbar-light bg-white">
+            <span class="navbar-brand mb-0 h1">Footer</span>
+        </nav>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="application/javascript" src="script.js"></script>
+<script type="application/javascript" src="classUsers.js"></script>
+</body>
+</html>
